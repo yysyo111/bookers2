@@ -1,5 +1,6 @@
+<%= render 'users/userinfo', user: current_user %>
+
 <h2>books</h2>
-<% @books.each do |book| %>
   <table>
     <thead>
       <tr>
@@ -10,6 +11,7 @@
       </tr>
     </thead>
     <tbody>
+      <% @books.each do |book| %>
       <tr>
         <td>
           <%= link_to user_path(book.user.id) do %>
@@ -23,9 +25,9 @@
         </td>
         <td><%= book.body %></td>
       </tr>
+      <% end %>
     </tbody>
   </table>
-<% end %>
 
 <h2>New book</h2>
   <%= form_with model: @book do |f| %>
