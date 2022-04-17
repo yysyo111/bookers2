@@ -43,7 +43,10 @@
         </div>
       </nav>
     </header>
-    <%= yield %>
+    <main>
+      <%= render 'layouts/flash' %>
+      <%= yield %>
+    </main>
   </body>
 </html>
 

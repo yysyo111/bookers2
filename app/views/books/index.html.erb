@@ -1,3 +1,12 @@
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prohibited this obj from being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= render 'users/userinfo', user: current_user %>
 
 <h2>books</h2>
@@ -29,8 +38,10 @@
     </tbody>
   </table>
 
+
+
 <h2>New book</h2>
-  <%= form_with model: @book do |f| %>
+  <%= form_with model: @book, url: '/books', method: :post do |f| %>
     <label>Title</label>
       <%= f.text_field :title %>
     <label>Opinion</label>
