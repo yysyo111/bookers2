@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  # before_action :authenticate_user!, except: [:show, :index]
+  # before_action :signed_in_user, only: [:edit, :update]
+  # before_action :corrent_user, only: [:edit, :update]
+  
   def show
     @user = User.find(params[:id])
     @books = @user.books
@@ -10,6 +14,9 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    if @user.id != current_user.id
+      redirect_to user_path(current_user)
+    end
   end
   
   def update
@@ -28,4 +35,10 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :introduction)
   end
   
+  # def corrent_user
+  #   @user = User.find(params[:id])
+  #   redirect_to(user_path) unless @user == current_user　慣れたら使う、基本はif文からやっていく
+  # end
 end
+
+
