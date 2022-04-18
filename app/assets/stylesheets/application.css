@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/*form {*/
+/*    display: block;*/
+/*    margin-top: 0em;*/
+/*}*/
+
+/*h2 {*/
+/*  font-size: 2rem;*/
+/*}*/
+
+/*.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {*/
+/*    margin-bottom: 0.5rem;*/
+/*    font-weight: 500;*/
+/*    line-height: 1.2;*/
+/*}*/
+
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+
+/*.row {*/
+/*    display: flex;*/
+/*     flex-wrap: wrap; */
+/*    margin-right: -15px;*/
+/*    margin-left: -15px;*/
+/*}*/
